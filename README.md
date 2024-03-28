@@ -1,6 +1,9 @@
 # mall-escape
 Projet S4
 
+![2](https://github.com/yasmine7732/mall-escape/assets/131146446/91852d4e-dff7-44b1-b387-11ceed5954f0)
+
+
 L’histoire
 Notre jeu présentera un personnage perdu dans un très grand centre commercial. Il se perd
 dans ce centre commercial en ayant voulu poursuivre les individus qui lui ont volé tout son
