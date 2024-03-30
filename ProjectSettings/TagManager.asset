@@ -41,3 +41,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: perso
+    uniqueID: 908375785
+    locked: 0
