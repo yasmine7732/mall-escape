@@ -5,7 +5,7 @@ public class PlayerMovement : MonoBehaviour
 
     public float moveSpeed;
     public float jumpForce;
-    public bool isJumping;
+    public bool isJumping=false;
     public bool isGrounded;
 
     public Transform groundCheckLeft;
@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        
         isGrounded = Physics2D.OverlapArea(groundCheckLeft.position, groundCheckRight.position);
         float horizontalMov = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
         if (Input.GetButtonDown("Jump") && isGrounded==true)
@@ -32,7 +33,10 @@ public class PlayerMovement : MonoBehaviour
         Flip(rb.velocity.x);
 
         float characterVelocity = Mathf.Abs(rb.velocity.x);
+
         animator.SetFloat("speed", characterVelocity);
+        animator.SetBool("jump", isGrounded);
+
     }
      
     void MovePlayer(float _horizontalMov) 
@@ -42,13 +46,14 @@ public class PlayerMovement : MonoBehaviour
 
         rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref velocity, 0.05f);
 
-        if (isJumping == true) 
+        while (isJumping == true)
         {
             rb.AddForce(new Vector2(0f, jumpForce));
             isJumping = false;
         }
     }
 
+    //changer la direction du perso
     void Flip(float _velocity)
     {
         if (_velocity > 0.1f)
