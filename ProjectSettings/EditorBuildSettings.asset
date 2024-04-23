@@ -8,4 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/start.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 0
+    path: Assets/Scenes/transition/cakeLevel01.unity
+    guid: 213b1961819b43c4fa06f667b4b964f3
+  - enabled: 1
+    path: Assets/Scenes/transition/level01.unity
+    guid: 3f91d66946436cb42a31ae7b40f22d59
+  - enabled: 1
+    path: Assets/Scenes/miniJeux/cakeLevel01.unity
+    guid: afbeed8eaf754854aad3d06c7963192e
   m_configObjects: {}
