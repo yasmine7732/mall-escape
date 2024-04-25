@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -18,16 +19,28 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector3 velocity = Vector3.zero;
 
+    public AudioSource audioSource;
+    public AudioClip sound;
 
-    void FixedUpdate()
+
+    void Update()
     {
         
         isGrounded = Physics2D.OverlapArea(groundCheckLeft.position, groundCheckRight.position);
-        float horizontalMov = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
+      
         if (Input.GetButtonDown("Jump") && isGrounded==true)
         {
             isJumping = true;
         }
+        animator.SetBool("jump", isGrounded);
+
+    }
+
+    void FixedUpdate()
+    {
+
+        float horizontalMov = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
+
         MovePlayer(horizontalMov);
 
         Flip(rb.velocity.x);
@@ -35,10 +48,9 @@ public class PlayerMovement : MonoBehaviour
         float characterVelocity = Mathf.Abs(rb.velocity.x);
 
         animator.SetFloat("speed", characterVelocity);
-        animator.SetBool("jump", isGrounded);
 
     }
-     
+
     void MovePlayer(float _horizontalMov) 
     {
 
@@ -48,6 +60,7 @@ public class PlayerMovement : MonoBehaviour
 
         while (isJumping == true)
         {
+            AudioSource.PlayClipAtPoint(sound, transform.position);
             rb.AddForce(new Vector2(0f, jumpForce));
             isJumping = false;
         }
