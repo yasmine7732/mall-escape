@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
-using TMPro;
+using UnityEngine.SceneManagement;
 
 public class cakeGame : MonoBehaviour
 {
@@ -25,6 +25,8 @@ public class cakeGame : MonoBehaviour
     private int numerateur;
     private int denominateur;
 
+    public string scenePerdu;
+    public string sceneGagne;
 
     private float plusGrand;
 
@@ -99,17 +101,24 @@ public class cakeGame : MonoBehaviour
     {
 
             if (plusGrand == fraction1) { 
-                print("gagné"); 
-            } 
-            else { print("perdu"); }
+                print("gagné");
+            SceneManager.LoadScene(sceneGagne);
+        } 
+            else { print("perdu");
+            SceneManager.LoadScene(scenePerdu);
+        }
         
 
     }
 
     void TaskOnClick2()
     {
-            if (plusGrand == fraction2) { print("gagné"); }
-            else { print("perdu"); }
+            if (plusGrand == fraction2) { print("gagné");
+            SceneManager.LoadScene(sceneGagne);
+        }
+            else { print("perdu");
+            SceneManager.LoadScene(scenePerdu);
+        }
         
 
     }
@@ -118,8 +127,12 @@ public class cakeGame : MonoBehaviour
     {
 
         
-            if (plusGrand == fraction3) { print("gagné"); }
-            else { print("perdu"); }
+            if (plusGrand == fraction3) { print("gagné");
+            SceneManager.LoadScene(sceneGagne);
+        }
+            else { print("perdu");
+            SceneManager.LoadScene(scenePerdu);
+        }
        
 
     }
@@ -128,8 +141,12 @@ public class cakeGame : MonoBehaviour
     {
 
        
-            if (plusGrand == fraction4) { print("gagné"); }
-            else { print("perdu"); }
+            if (plusGrand == fraction4) { print("gagné");
+            SceneManager.LoadScene(sceneGagne);
+        }
+            else { print("perdu");
+            SceneManager.LoadScene(scenePerdu);
+        }
         
 
     }

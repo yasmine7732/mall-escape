@@ -12,10 +12,10 @@ public class loadScene : MonoBehaviour
     {
         if (collision.CompareTag("Player")) 
         {
-            if (gameObject.CompareTag("shop")) {
+            /*if (gameObject.CompareTag("shop")) {
                 audioSource.clip = clip;
                 audioSource.Play();
-            }
+            }*/
             SceneManager.LoadScene(nomScene);
             
         }

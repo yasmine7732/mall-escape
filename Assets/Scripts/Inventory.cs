@@ -11,6 +11,7 @@ public class Inventory : MonoBehaviour
     private void Awake()
     {
         porteMonnaie.text = "0";
+        coinsCount = 0;
         if (instance != null) 
         {
             Debug.LogWarning("Il y a plus d'une instance de Inventory dans la scène");
@@ -30,4 +31,13 @@ public class Inventory : MonoBehaviour
         porteMonnaie.text = coinsCount.ToString();
     }
 
+    public int GetCoinsCount()
+    {
+        return coinsCount;
+    }
+
+    public void SetCoinsCount(int coins) {
+        coinsCount = coins;
+        porteMonnaie.text = coinsCount.ToString();
+    }
 }

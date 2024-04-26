@@ -6,7 +6,8 @@ public class pickUpObject : MonoBehaviour
 {
 
     public AudioSource audioSource;
-    public AudioClip sound;
+    public AudioClip effets;
+    //public AudioClip door;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -14,9 +15,13 @@ public class pickUpObject : MonoBehaviour
         {
             if (gameObject.CompareTag("coin"))
             {
-                AudioSource.PlayClipAtPoint(sound, transform.position);
+                AudioSource.PlayClipAtPoint(effets, transform.position);
                 Inventory.instance.addCoins(10);
             }
+            /*if (gameObject.CompareTag("shop"))
+            {
+                AudioSource.PlayClipAtPoint(door, transform.position);
+            }*/
             Destroy(gameObject);
         }
     }
