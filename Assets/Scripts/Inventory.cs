@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
-    public int coinsCount=0;
+    public int coinsCount;
     public static Inventory instance;
     public Text porteMonnaie;
     
@@ -28,16 +28,6 @@ public class Inventory : MonoBehaviour
 
     void Update()
     {
-        porteMonnaie.text = coinsCount.ToString();
-    }
-
-    public int GetCoinsCount()
-    {
-        return coinsCount;
-    }
-
-    public void SetCoinsCount(int coins) {
-        coinsCount = coins;
         porteMonnaie.text = coinsCount.ToString();
     }
 }
